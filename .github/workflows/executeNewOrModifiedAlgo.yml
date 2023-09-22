@@ -12,10 +12,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Execute modified or new script
       run: |
-        for file in $(git diff --name-only HEAD~1 HEAD)
+        for file in $(git diff --name-only origin/main~1 origin/main)
         do
           if [[ $file == algo_upload/*.py ]]; then 
             before_files=$(ls)
