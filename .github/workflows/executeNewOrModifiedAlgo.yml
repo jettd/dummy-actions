@@ -46,4 +46,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: algo-artifact
-        path: ./algo-artifact
+        path: /home/runner/work/dummy-actions/dummy-actions/algo_artifact
