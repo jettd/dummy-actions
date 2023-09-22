@@ -11,7 +11,7 @@ with open("random_output.txt", "w") as f:
 print("10 random numbers.")
 
 if (randnums[0] % 10):
-    exit randnums[0]
+    exit (randnums[0])
 
 exit 0
 
