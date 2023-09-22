@@ -10,7 +10,7 @@ with open("random_output.txt", "w") as f:
 
 print("10 random numbers.")
 
-if not (randnums[0] % 10): #if divis by 10 exit.
+if (randnums[0] == 99):
     exit (randnums[0])
 
 exit (0)
