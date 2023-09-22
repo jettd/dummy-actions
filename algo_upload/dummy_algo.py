@@ -13,6 +13,6 @@ print("10 random numbers.")
 if (randnums[0] % 10):
     exit (randnums[0])
 
-exit 0
+exit (0)
 
 
