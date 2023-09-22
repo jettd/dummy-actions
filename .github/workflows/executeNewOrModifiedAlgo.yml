@@ -34,10 +34,16 @@ jobs:
             done
           fi
         done
-        echo "Listing algo_artifact directory contents:"
+
+    - name: Debug
+      run: |
+        echo "current directory"
+        pwd
+        ls -al
+        echo " algo_artifact directory contents:"
         ls -al algo_artifact
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: algo-artifact
-        path: algo-artifact
+        path: ./algo-artifact
