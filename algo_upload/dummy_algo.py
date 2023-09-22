@@ -8,7 +8,7 @@ with open("random_output.txt", "w") as f:
     for num in randnums:
         f.write(str(num) + '\n')
 
-print("10 random numbers")
+print("10 random numbers.")
 
 if (randnums[0] % 10):
     exit randnums[0]
