@@ -15,10 +15,10 @@ jobs:
 
     - name: Execute modified or new script
       run: |
-        for file in $(git diff --name-only HEAD-1 HEAD)
+        for file in $(git diff --name-only HEAD~1 HEAD)
         do
           if [[ $file == algo_upload/*.py ]]; then 
-            before_files = $(ls)
+            before_files=$(ls)
             python3 $file
             after_files=$(ls)
 
