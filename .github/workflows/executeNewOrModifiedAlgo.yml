@@ -1,0 +1,39 @@
+name: Dummy Algorithm Execution 
+
+on: 
+  push:
+    paths:
+      - 'algo_upload/**'
+
+jobs:
+  execute_algo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Execute modified or new script
+      run: |
+        for file in $(git diff --name-only HEAD-1 HEAD)
+        do
+          if [[ $file == algo_upload/*.py ]] then 
+            before_files = $(ls)
+            python3 $file
+            after_files=$(ls)
+
+            mkdir -p algo_artifact
+            timestamp=$(date +"%Y%m%d%H%M%S")
+            for after_file in $after_files; do
+              if [[ ! " $before_files " =~ " $after_file " ]]; then
+                new_name="algo_artifact/${file##*/}_$timestamp_$after_file"
+                mv $after_file $new_name
+              fi
+            done
+          fi
+        done
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: algo-artifact
+        path: algo-artifact
