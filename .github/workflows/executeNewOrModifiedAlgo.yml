@@ -43,7 +43,7 @@ jobs:
         echo " algo_artifact directory contents:"
         ls -al algo_artifact
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2.3.1
       with:
         name: algo-artifact
         path: /home/runner/work/dummy-actions/dummy-actions/algo_artifact
