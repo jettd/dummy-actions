@@ -9,7 +9,6 @@ with open("random_output.txt", "w") as f:
         f.write(str(num) + '\n')
 
 print("10 random numbers written to random_output.txt")
-
 exit (0)
 
 
