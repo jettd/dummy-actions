@@ -8,7 +8,7 @@ with open("random_output.txt", "w") as f:
     for num in randnums:
         f.write(str(num) + '\n')
 
-print("10 random numbers written to random_output.txt")
+print("10 random numbers written to random_output")
 exit (0)
 
 
