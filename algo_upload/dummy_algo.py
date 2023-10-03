@@ -2,7 +2,7 @@
 
 import random
 
-randnums = [random.randint(1, 100) for _ in range(10)]
+randnums = [random.randint(1, 1000) for _ in range(10)]
 
 with open("random_output.txt", "w") as f:
     for num in randnums:
