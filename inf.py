@@ -1,7 +1,7 @@
-# Test Script 1
+# inf loop testing.
 def main():
     i = 0; 
-    while true:  
+    while True:  
         i += 1 
     return "inf_loop_ended_somehow" #should never end. 
 
